@@ -6,19 +6,41 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello Convex Optimization | YEN</title>
+  <title>notes of convex optimization:chapter1 | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Start my Convex Optimization study ~~Convex Optimization-Cambridge University Press (2004)">
+  <meta name="description" content="note of Convex Optimization:Stephen Boyd and Lieven Vandenberghe: chapter1: introduction">
+<meta name="keywords" content="convex optimization">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello Convex Optimization">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/hello-world/index.html">
+<meta property="og:title" content="notes of convex optimization:chapter1">
+<meta property="og:url" content="http://yoursite.com/2018/03/31/notes-of-convex-optimization-chapter1/index.html">
 <meta property="og:site_name" content="YEN">
-<meta property="og:description" content="Start my Convex Optimization study ~~Convex Optimization-Cambridge University Press (2004)">
+<meta property="og:description" content="note of Convex Optimization:Stephen Boyd and Lieven Vandenberghe: chapter1: introduction">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-09T13:47:40.748Z">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/1.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/2.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/3.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/4.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/5.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/6.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/7.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/8.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/9.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/10.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/11.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/12.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/13.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/14.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/15.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/16.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/17.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/18.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/19.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/20.PNG">
+<meta property="og:updated_time" content="2018-04-13T00:38:14.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Convex Optimization">
-<meta name="twitter:description" content="Start my Convex Optimization study ~~Convex Optimization-Cambridge University Press (2004)">
+<meta name="twitter:title" content="notes of convex optimization:chapter1">
+<meta name="twitter:description" content="note of Convex Optimization:Stephen Boyd and Lieven Vandenberghe: chapter1: introduction">
+<meta name="twitter:image" content="http://yoursite.com/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/1.PNG">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -47,7 +69,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/yen.jpg" class="js-avatar">
+			<img src="/img/yen.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">YEN</a></h1>
@@ -67,8 +89,6 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">All atrical</a>
     			
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">Link</a>
     			
             
     			
@@ -105,7 +125,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/yen.jpg" class="js-avatar">
+				<img src="/img/yen.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">YEN</h1>
@@ -152,27 +172,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-notes-of-convex-optimization-chapter1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello Convex Optimization
+      notes of convex optimization:chapter1
     </h1>
   
 
         
-        <a href="/2018/04/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-04-09T12:04:00.576Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+        <a href="/2018/03/31/notes-of-convex-optimization-chapter1/" class="archive-article-date">
+  	<time datetime="2018-03-31T15:11:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Start-my-Convex-Optimization-study"><a href="#Start-my-Convex-Optimization-study" class="headerlink" title="Start my Convex Optimization study ~~"></a>Start my Convex Optimization study ~~</h2><p>Convex Optimization-Cambridge University Press (2004)</p>
+        <p>note of <strong>Convex Optimization:Stephen Boyd and Lieven Vandenberghe</strong>: chapter1: introduction</p>
+<p><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/1.PNG" alt="image"><br><br><a id="more"></a><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/2.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/3.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/4.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/5.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/6.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/7.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/8.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/9.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/10.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/11.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/12.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/13.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/14.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/15.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/16.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/17.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/18.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/19.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-04-09/convexOptimizaitonchapter1/20.PNG" alt="image"><br></p>
 
       
 
@@ -181,6 +202,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">convex optimization</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -231,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/09/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/31/notes-of-convex-optimization-chapter1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -243,6 +275,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/04/08/notes-of-convex-optimization-chapter2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          notes of convex optimization:chapter2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/23/notes-of-Graph-Embedding-with-Side-information-by-Taobao-K/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">notes of &lt;&lt;Graph Embedding with Side information by Taobao_K&gt;&gt;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -256,6 +307,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    Directory, not exit …
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -301,7 +365,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -321,8 +385,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -334,15 +396,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All atrical</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All atrical</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">Link</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About me</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About me</a></li>
       
         
     </ul>
@@ -363,7 +423,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">convex</a>
+                <a href="javascript:void(0)" class="js-tag color2">Recommendation system</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">convex optimizaiton</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">convex optimization</a>
               </li>
             
             <div class="clearfix"></div>
@@ -410,43 +478,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://yangenneng.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>link1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://yangenneng.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>link2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://yangenneng.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>link3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://yangenneng.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>link4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://yangenneng.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>link5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://yangenneng.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>link6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">I&#39;m Yang enneng &lt;br&gt;&lt;br&gt;&lt;br&gt;Thanks!</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">I&#39;m Yang enneng &lt;br&gt;&lt;br&gt; Currently learning:convex optimization   &lt;br&gt;&lt;br&gt;  Thanks!</div>
   	  	
     	</section>
     

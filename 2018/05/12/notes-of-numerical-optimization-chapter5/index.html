@@ -6,28 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>notes of numerical optimization chapter1 and chapter2 | YEN</title>
+  <title>notes of numerical optimization chapter5 | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="note of Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright chapter1: Introduction and chapter2:Fundamentals of Unconstrained Optimization">
+  <meta name="description" content="note of Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright chapter5: conjugate gradient Methodscode star: https://github.com/YEN-GitHub/Optimization_BasicAlgorithm">
 <meta name="keywords" content="numerical optimization">
 <meta property="og:type" content="article">
-<meta property="og:title" content="notes of numerical optimization chapter1 and chapter2">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/notes-of-numerical-optimization-chapter1-and-chapter2/index.html">
+<meta property="og:title" content="notes of numerical optimization chapter5">
+<meta property="og:url" content="http://yoursite.com/2018/05/12/notes-of-numerical-optimization-chapter5/index.html">
 <meta property="og:site_name" content="YEN">
-<meta property="og:description" content="note of Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright chapter1: Introduction and chapter2:Fundamentals of Unconstrained Optimization">
+<meta property="og:description" content="note of Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright chapter5: conjugate gradient Methodscode star: https://github.com/YEN-GitHub/Optimization_BasicAlgorithm">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/1.PNG">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/2.PNG">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/3.PNG">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/4.PNG">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/5.PNG">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/6.PNG">
-<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/7.PNG">
-<meta property="og:updated_time" content="2018-05-07T12:53:23.527Z">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/1.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/2.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/3.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/4.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/5.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/6.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/7.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/8.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/9.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/10.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/11.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/12.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/13.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/14.PNG">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/15.PNG">
+<meta property="og:updated_time" content="2018-05-12T14:38:14.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="notes of numerical optimization chapter1 and chapter2">
-<meta name="twitter:description" content="note of Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright chapter1: Introduction and chapter2:Fundamentals of Unconstrained Optimization">
-<meta name="twitter:image" content="http://yoursite.com/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/1.PNG">
+<meta name="twitter:title" content="notes of numerical optimization chapter5">
+<meta name="twitter:description" content="note of Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright chapter5: conjugate gradient Methodscode star: https://github.com/YEN-GitHub/Optimization_BasicAlgorithm">
+<meta name="twitter:image" content="http://yoursite.com/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/1.PNG">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -179,28 +187,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-notes-of-numerical-optimization-chapter1-and-chapter2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-notes-of-numerical-optimization-chapter5" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      notes of numerical optimization chapter1 and chapter2
+      notes of numerical optimization chapter5
     </h1>
   
 
         
-        <a href="/2018/05/04/notes-of-numerical-optimization-chapter1-and-chapter2/" class="archive-article-date">
-  	<time datetime="2018-05-04T14:30:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
+        <a href="/2018/05/12/notes-of-numerical-optimization-chapter5/" class="archive-article-date">
+  	<time datetime="2018-05-12T14:35:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>note of <strong>Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright</strong> chapter1: Introduction and chapter2:Fundamentals of Unconstrained Optimization<br><a id="more"></a><br><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/1.PNG" alt="image"><br></p>
-<p><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/2.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/3.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/4.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/5.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/6.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-04/numericalOptimizaitonchapter1and2/7.PNG" alt="image"><br></p>
+        <p>note of <strong>Numerical Optimization(Second Edition):Jorge Nocedal and Stephen J.Wright</strong> chapter5: conjugate gradient Methods<br>code star: <a href="https://github.com/YEN-GitHub/Optimization_BasicAlgorithm" target="_blank" rel="noopener">https://github.com/YEN-GitHub/Optimization_BasicAlgorithm</a><br><a id="more"></a><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/1.PNG" alt="image"><br></p>
+<p><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/2.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/3.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/4.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/5.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/6.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/7.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/8.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/9.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/10.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/11.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/12.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/13.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/14.PNG" alt="image"><br><br><img src="/img/BlogImg/2018-05-12/numericalOptimizaitonchapter5/15.PNG" alt="image"><br></p>
 
       
 
@@ -270,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/04/notes-of-numerical-optimization-chapter1-and-chapter2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/12/notes-of-numerical-optimization-chapter5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +292,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/10/notes-of-numerical-optimization-chapter3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          notes of numerical optimization chapter3
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/29/notes-of-convex-optimization-chapter5/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">notes of convex optimization: chapter5</div>
+    <a href="/2018/05/10/notes-of-numerical-optimization-chapter3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">notes of numerical optimization chapter3</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -347,7 +346,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "Fri May 04 2018 22:30:14 GMT+0800",
+  id: "Sat May 12 2018 22:35:14 GMT+0800",
   owner: 'YEN-GitHub',
   repo: 'YEN-GitHub.github.io',
   oauth: {

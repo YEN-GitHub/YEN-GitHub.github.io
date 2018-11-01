@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="YEN">
 <meta property="og:description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-31T15:07:22.002Z">
+<meta property="og:updated_time" content="2018-11-01T17:22:16.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最优化理论基础">
 <meta name="twitter:description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
@@ -197,8 +197,8 @@
 <p>n元实函数$f(x),x=(x_1,x_2,\ldots,x_n)^T$：梯度在每个分量都连续，称f在x处一阶连续可导。Hessian在每个分量都连续，称f在x处二阶连续可导（此时Hessian为对称阵）。<br><br>向量值函数:$F=(F_1,F_2,\ldots,F_n)^T$: 若每个分量$F_i$都（连续）可微，则F连续）可微。F在x的导数是指他在x的Jacobi矩阵$F’(x)/J_F(x)$。有时也把雅可比的转置称为F在x的梯度。<br><br>对于向量值函数，可以定义Lipschitz连续的概念。<br><br></p>
 <p>凸集的一些例子：n维空间中l个点的凸组合是一个凸集；n维欧式空间中的超平面；射线；<br><br>凸包的定义：所有包含集合D的凸集的交集叫做D的凸包。<br><br>锥；凸锥；尖锥；尖凸锥的定义。<br><br>集合$R_+^n$ 是一个尖锥，通常称为非负锥。凸锥$R_{++}^n$称为正锥。 <br><br></p>
 <p>凸函数；严格凸函数；一致凸（强凸）函数<br><br>一般而言，目标函数的稳定点不一定是极小值点。但对于凸函数来说，稳定点，局部极小值点，全局极小值点是等价的。<br><br></p>
-<p>算法局部收敛速度：$lim_{k \rightarrow \infty} \frac{||x_{k+1}-x^<em>||}{||x_{k}-x^</em>||} = \theta$ <br><br>(1) $ p=1\quad and \quad 0&lt; \theta &lt; 1 $: 线性收敛速度 <br><br>(2) $ p=1\quad and \quad \theta = 0 $: 超线性收敛速度 <br><br>(3) $ p=2\quad and \quad 0&lt; \theta &lt; \infty $: 平方收敛速度 <br><br>(4) $ p&gt;2\quad and \quad 0&lt; \theta &lt; \infty $: p阶收敛速度 <br><br></p>
-<p>算法终止条件：<br><br>(1) 位移的绝对误差或相对误差充分小。$||x_{k+1}-x_k|| &lt; \epsilon$ or $\frac{||x_{k+1}-x_k||}{||x_k||} &lt; \epsilon$<br><br>(2) 目标函数的绝对误差或相对误差充分小。$|f(x_{k+1})-f(x_k)| &lt; \epsilon$ or<br>$\frac{|f(x_{k+1})-f(x_k)|}{|f(x_k)|} &lt; \epsilon$ <br><br>(3) 目标函数的梯度范数足够小: $||\bigtriangledown f(x_k)||&lt; \epsilon $<br><br><br><br><br></p>
+<p>算法局部收敛速度：<br><br>$lim_{k \rightarrow \infty}  \frac{||x_{k+1}-x^{\ast}||}{||x_{k}-x^{\ast}||} = \theta$ <br><br>(1) $p=1\quad and \quad 0&lt; \theta &lt; 1$: 线性收敛速度 <br><br>(2) $p=1\quad and \quad \theta = 0$: 超线性收敛速度 <br><br>(3) $p=2\quad and \quad 0&lt; \theta &lt; \infty$: 平方收敛速度 <br><br>(4) $p&gt;2\quad and \quad 0&lt; \theta &lt; \infty$: p阶收敛速度 <br><br></p>
+<p>算法终止条件：<br><br>(1) 位移的绝对误差或相对误差充分小。$||x_{k+1}-x_k|| &lt; \epsilon$ or $\frac{||x_{k+1}-x_k||}{||x_k||} &lt; \epsilon$<br><br>(2) 目标函数的绝对误差或相对误差充分小。$|f(x_{k+1})-f(x_k)| &lt; \epsilon$ or<br>$\frac{|f(x_{k+1})-f(x_k)|}{|f(x_k)|} &lt; \epsilon$ <br><br>(3) 目标函数的梯度范数足够小: $||\bigtriangledown f(x_k)||&lt; \epsilon$<br><br><br><br><br></p>
 
       
 

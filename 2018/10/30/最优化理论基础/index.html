@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="YEN">
 <meta property="og:description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-01T17:22:16.347Z">
+<meta property="og:updated_time" content="2018-11-03T13:05:40.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最优化理论基础">
 <meta name="twitter:description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
@@ -199,6 +199,9 @@
 <p>凸函数；严格凸函数；一致凸（强凸）函数<br><br>一般而言，目标函数的稳定点不一定是极小值点。但对于凸函数来说，稳定点，局部极小值点，全局极小值点是等价的。<br><br></p>
 <p>算法局部收敛速度：<br><br>$lim_{k \rightarrow \infty}  \frac{||x_{k+1}-x^{\ast}||}{||x_{k}-x^{\ast}||} = \theta$ <br><br>(1) $p=1\quad and \quad 0&lt; \theta &lt; 1$: 线性收敛速度 <br><br>(2) $p=1\quad and \quad \theta = 0$: 超线性收敛速度 <br><br>(3) $p=2\quad and \quad 0&lt; \theta &lt; \infty$: 平方收敛速度 <br><br>(4) $p&gt;2\quad and \quad 0&lt; \theta &lt; \infty$: p阶收敛速度 <br><br></p>
 <p>算法终止条件：<br><br>(1) 位移的绝对误差或相对误差充分小。$||x_{k+1}-x_k|| &lt; \epsilon$ or $\frac{||x_{k+1}-x_k||}{||x_k||} &lt; \epsilon$<br><br>(2) 目标函数的绝对误差或相对误差充分小。$|f(x_{k+1})-f(x_k)| &lt; \epsilon$ or<br>$\frac{|f(x_{k+1})-f(x_k)|}{|f(x_k)|} &lt; \epsilon$ <br><br>(3) 目标函数的梯度范数足够小: $||\bigtriangledown f(x_k)||&lt; \epsilon$<br><br><br><br><br></p>
+<blockquote>
+<p>ref: 最优化方法及其Matlab程序设计 马昌凤（本文仅为个人笔记，无其他用途）</p>
+</blockquote>
 
       
 
@@ -307,6 +310,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/11/03/线搜索技术/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          最优化：线搜索技术
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/01/Learning-Binary-Codes-for-Collaborative-Filtering-KDD12/" id="article-nav-older" class="article-nav-link-wrap">
@@ -486,11 +498,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RecSys</a>
+                <a href="javascript:void(0)" class="js-tag color4">Opt</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Opt</a>
+                <a href="javascript:void(0)" class="js-tag color2">RecSys</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: RecSys | YEN</title>
+  <title>最优化：线搜索技术 | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YEN">
-<meta property="og:url" content="http://yoursite.com/tags/RecSys/index.html">
+  <meta name="description" content="摘要：一维线搜索技术：精确线搜索；非精确线搜索。">
+<meta name="keywords" content="Opt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最优化：线搜索技术">
+<meta property="og:url" content="http://yoursite.com/2018/11/03/线搜索技术/index.html">
 <meta property="og:site_name" content="YEN">
+<meta property="og:description" content="摘要：一维线搜索技术：精确线搜索；非精确线搜索。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-03T14:24:56.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YEN">
+<meta name="twitter:title" content="最优化：线搜索技术">
+<meta name="twitter:description" content="摘要：一维线搜索技术：精确线搜索；非精确线搜索。">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -166,98 +171,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-线搜索技术" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/01/Learning-Binary-Codes-for-Collaborative-Filtering-KDD12/" class="archive-article-date">
-  	<time datetime="2018-10-01T13:29:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/01/Learning-Binary-Codes-for-Collaborative-Filtering-KDD12/">notes of &lt;&lt; Learning Binary Codes for Collaborative Filtering-KDD12 &gt;&gt;</a>
+    <h1 class="article-title" itemprop="name">
+      最优化：线搜索技术
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/11/03/线搜索技术/" class="archive-article-date">
+  	<time datetime="2018-11-03T12:43:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
+<h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>一维线搜索技术：精确线搜索；非精确线搜索。<br><br><a id="more"></a></p>
+<h1 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h1><h2 id="步长"><a href="#步长" class="headerlink" title="步长"></a>步长</h2><p>迭代算法中，一般都有一步通过某种搜索方式确定步长因子 $\alpha_k$, 使得 $f(x_k  + \alpha_k d_k )&lt;f(x_k)$ (1) <br><br>令 $\phi(\alpha) = f(x_k  + \alpha_k d_k )$ (2)<br><br>(1)等价于求步长 $\phi(\alpha_k) &lt; \phi(0)$<br><br>精确线搜索: 求 $\alpha_k$ 使得目标函数沿着 $d_k$ 达到极小。$f(x_k  + \alpha_k d_k )= \min_{\alpha &gt; 0}f(x_k  + \alpha d_k )$<br><br>1) 若连续可微：$\bigtriangledown f(x_k  + \alpha_k d_k)^T d_k = 0$ <br></p>
+<p>非精确线搜索: 求 $\alpha_k$ 使得目标函数沿着 $d_k$ 得到可接受的下降量。$f(x_k) - f(x_k  + \alpha_k d_k )&gt;0$ <br></p>
+<h2 id="精确线搜索"><a href="#精确线搜索" class="headerlink" title="精确线搜索"></a>精确线搜索</h2><p>先确定搜索空间，再采用某种插值或分割技术缩小区间。<br><br>使用梯度的搜索：插值法；牛顿法；抛物线法<br><br>不使用梯度的搜索：黄金分割法；分数法；成功-失败法<br></p>
+<h3 id="黄金分割法（0-168法）"><a href="#黄金分割法（0-168法）" class="headerlink" title="黄金分割法（0.168法）"></a>黄金分割法（0.168法）</h3><p>仅需计算函数值，适用范围广。<br><br>基本思想：通过试探点函数值的比较，是包含极小值的搜索空间不断缩小.<br><br>code: <a href="https://github.com/YEN-GitHub/OptimizationAlgorithm_Matlab/blob/master/LinearSearch/golds.m" target="_blank" rel="noopener">https://github.com/YEN-GitHub/OptimizationAlgorithm_Matlab/blob/master/LinearSearch/golds.m</a> <br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">function [s,phis,k,G,E] = golds(phi,a,b,delta,epsilon)</span><br><span class="line">% ref: optimization method and matlab programming - Changfeng Ma</span><br><span class="line">% coder: Enneng Yang</span><br><span class="line">% input:</span><br><span class="line">%   phi: objective function</span><br><span class="line">%   a,b : search region [a,b]</span><br><span class="line">%   delta: variable error value</span><br><span class="line">%   epsilon: function error value</span><br><span class="line">%</span><br><span class="line">% output:</span><br><span class="line">%   s: approximate minimum point</span><br><span class="line">%   phis: minimum value</span><br><span class="line">%   G: n * 4 matrix</span><br><span class="line">%      k: Row i of k is the value of iteration [a_k p_k q_k b_k]</span><br><span class="line">%   E[ds, dphi]: margin of error  of s and phi</span><br><span class="line"></span><br><span class="line">t = (sqrt(5)-1)/2;</span><br><span class="line">h = b-a;</span><br><span class="line">phia = feval(phi,a);</span><br><span class="line">phib = feval(phi,b);</span><br><span class="line">p = a+(1-t)*h;</span><br><span class="line">q = a+t*h;</span><br><span class="line">phip = feval(phi,p);</span><br><span class="line">phiq = feval(phi,q);</span><br><span class="line"></span><br><span class="line">k=1;</span><br><span class="line">G(k,:) = [a,p,q,b];</span><br><span class="line"></span><br><span class="line">while (abs(phib-phia) &gt; epsilon) | (h&gt;delta)</span><br><span class="line">    if(phip&lt;phiq)</span><br><span class="line">        b=q; phib=phiq; q=p; phiq = phip;</span><br><span class="line">        h=b-a; p=a+(1-t)*h; phip=feval(phi,p);</span><br><span class="line">    else</span><br><span class="line">        a=p; phia=phip; p=q; phip=phiq;</span><br><span class="line">        h=b-a; q=a+t*h; phiq=feval(phi,q);</span><br><span class="line">    end</span><br><span class="line">    k = k+1;</span><br><span class="line">    G(k,:) = [a,p,q,b];</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">ds = abs(b-a);</span><br><span class="line">dphi = abs(phib-phia);</span><br><span class="line">if(phip&lt;=phiq)</span><br><span class="line">    s=p; phis=phip;</span><br><span class="line">else</span><br><span class="line">    s=q; phis=phiq;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">E = [ds,dphi];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">% test:</span><br><span class="line">% f(x) = x^2 - sin(x)    x in [0,1]</span><br><span class="line">% [s,phis,k,G,E] = golds(inline(&apos;x^2 - sin(x)&apos;),0,1,1e-4,1e-5)</span><br><span class="line"></span><br><span class="line">% result:</span><br><span class="line">% s = 0.4502</span><br><span class="line">%</span><br><span class="line">% phis =  -0.2325</span><br><span class="line">%</span><br><span class="line">% k = 21</span><br><span class="line">%</span><br><span class="line">% G =</span><br><span class="line">%          0    0.3820    0.6180    1.0000</span><br><span class="line">%          0    0.2361    0.3820    0.6180</span><br><span class="line">%     0.2361    0.3820    0.4721    0.6180</span><br><span class="line">%     0.3820    0.4721    0.5279    0.6180</span><br><span class="line">%     0.3820    0.4377    0.4721    0.5279</span><br><span class="line">%     0.3820    0.4164    0.4377    0.4721</span><br><span class="line">%     0.4164    0.4377    0.4508    0.4721</span><br><span class="line">%     0.4377    0.4508    0.4590    0.4721</span><br><span class="line">%     0.4377    0.4458    0.4508    0.4590</span><br><span class="line">%     0.4458    0.4508    0.4540    0.4590</span><br><span class="line">%     0.4458    0.4489    0.4508    0.4540</span><br><span class="line">%     0.4489    0.4508    0.4520    0.4540</span><br><span class="line">%     0.4489    0.4501    0.4508    0.4520</span><br><span class="line">%     0.4489    0.4497    0.4501    0.4508</span><br><span class="line">%     0.4497    0.4501    0.4504    0.4508</span><br><span class="line">%     0.4497    0.4499    0.4501    0.4504</span><br><span class="line">%     0.4499    0.4501    0.4502    0.4504</span><br><span class="line">%     0.4501    0.4502    0.4503    0.4504</span><br><span class="line">%     0.4501    0.4502    0.4502    0.4503</span><br><span class="line">%     0.4501    0.4502    0.4502    0.4502</span><br><span class="line">%     0.4502    0.4502    0.4502    0.4502</span><br><span class="line">%</span><br><span class="line">%</span><br><span class="line">% E =</span><br><span class="line">%    1.0e-04 *</span><br><span class="line">%</span><br><span class="line">%     0.6611    0.0000</span><br></pre></td></tr></table></figure></p>
+<h3 id="抛物线法（二次插值法）"><a href="#抛物线法（二次插值法）" class="headerlink" title="抛物线法（二次插值法）"></a>抛物线法（二次插值法）</h3><p>在搜索空间不断使用二次多项式去近似目标函数，并逐步用插值多项式的极小值点去逼近搜索问题.<br><br><br><br><br></p>
+<h2 id="非精确线搜索"><a href="#非精确线搜索" class="headerlink" title="非精确线搜索"></a>非精确线搜索</h2><h3 id="Wolfe准则"><a href="#Wolfe准则" class="headerlink" title="Wolfe准则"></a>Wolfe准则</h3><h3 id="Armijo准则"><a href="#Armijo准则" class="headerlink" title="Armijo准则"></a>Armijo准则</h3><p><br><br><br><br><br></p>
+<blockquote>
+<p>ref: 最优化方法及其Matlab程序设计 马昌凤 （本文仅为个人笔记，无其他用途）</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RecSys</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Opt</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/03/线搜索技术/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/23/Billion-scale-Commodity-Embedding-for-E-commerce-Recommendation-in-Alibaba/" class="archive-article-date">
-  	<time datetime="2018-03-23T14:20:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/30/最优化理论基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最优化理论基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/23/Billion-scale-Commodity-Embedding-for-E-commerce-Recommendation-in-Alibaba/">notes of &lt;&lt;Billion-scale Commodity Embedding for E-commerce Recommendation in Alibaba&gt;&gt;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RecSys</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要："><span class="toc-number">1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#知识点："><span class="toc-number">2.</span> <span class="toc-text">知识点：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#步长"><span class="toc-number">2.1.</span> <span class="toc-text">步长</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精确线搜索"><span class="toc-number">2.2.</span> <span class="toc-text">精确线搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#黄金分割法（0-168法）"><span class="toc-number">2.2.1.</span> <span class="toc-text">黄金分割法（0.168法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抛物线法（二次插值法）"><span class="toc-number">2.2.2.</span> <span class="toc-text">抛物线法（二次插值法）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非精确线搜索"><span class="toc-number">2.3.</span> <span class="toc-text">非精确线搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Wolfe准则"><span class="toc-number">2.3.1.</span> <span class="toc-text">Wolfe准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Armijo准则"><span class="toc-number">2.3.2.</span> <span class="toc-text">Armijo准则</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: ‘最优化：线搜索技术’,
+  owner: 'YEN-GitHub',
+  repo: 'YEN-GitHub.github.io',
+  oauth: {
+    client_id: '5935364c8ad39857b584',
+    client_secret: 'a9c07c5c99c3a00dac5a35930961939f9f910a00',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -280,9 +398,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="YEN">
 <meta property="og:description" content="Abstract:Projected Gradient Descent">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-16T07:52:26.267Z">
+<meta property="og:updated_time" content="2018-12-16T07:53:23.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Projected Gradient Descent Algorithm">
 <meta name="twitter:description" content="Abstract:Projected Gradient Descent">
@@ -197,7 +197,7 @@
 <p>Projected Gradient Descent: <br><br>$x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f(x_t) \<br>     l_2 \; norm: x_{t+1} \in argmin_{x\in C} \; ||x - x^{‘}_{t+1}||_2$<br><br></p>
 <p>C: convex set $\Rightarrow$ uniqueness: x $\Rightarrow$  PGD: convergence to global optimal value<br><br><br>problem:<br>$\min \; ||  x-x^{‘} ||_2 \ s.t.\; Ax=b$<br><br></p>
 <p>let $y=x-x^{‘}, c=b-Ax^{‘}$<br>$\Leftrightarrow\<br>    \min \; ||  y ||_2 \<br>     s.t.\; Ay=c$<br><br></p>
-<p>Lagrange:<br><br>$L(y,\lambda) = y^T y + \lambda^T (Ay-c)\$<br><br></p>
+<p>Lagrange:<br><br>$L(y,\lambda) = y^T y + \lambda^T (Ay-c)$<br><br></p>
 <p>dual:<br><br><br>$g(\lambda) = inf_y \;L(y,\lambda)$<br><br></p>
 <p>$let\; \bigtriangledown_y   L(y,\lambda) = 2y + A^T \lambda = 0 \<br>     \Rightarrow y = -\frac{1}{2} A^T \lambda \<br>     \Rightarrow \<br>     g(\lambda) = L(-\frac{1}{2} A^T \lambda,\lambda) = -\frac{1}{4} \lambda^TAA^T\lambda - c^T \lambda \<br>     let\; \bigtriangledown g_{\lambda} = 0 \Rightarrow \lambda = -2(AA^T)^{-1}c \<br>     \Rightarrow y= A^T(AA^T)^{-1}c$<br><br></p>
 <p>$\Leftrightarrow$<br><br></p>

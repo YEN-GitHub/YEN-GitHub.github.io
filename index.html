@@ -168,6 +168,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Projected-Gradient-Descent-Algorithm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/16/Projected-Gradient-Descent-Algorithm/">Projected Gradient Descent Algorithm</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/16/Projected-Gradient-Descent-Algorithm/" class="archive-article-date">
+  	<time datetime="2018-12-16T07:31:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></h2><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h1><p>Projected Gradient Descent <br><br>object:<br><br>$\min_{x \in C} \; f(x)<br>    \quad \quad C \in R^d : bounded \; set \Leftarrow Ax=b$</p>
+<p>Projected Gradient Descent: <br><br>$x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f(x_t) \<br>     l_2 \; norm: x_{t+1} \in argmin_{x\in C} \; ||x - x^{‘}_{t+1}||_2$<br><br><br>C: convex set $\Rightarrow$ uniqueness: x $\Rightarrow$  PGD: convergence to global optimal value<br><br><br>problem:<br>$\min \; ||  x-x^{‘} ||_2 \s.t.\; Ax=b$<br><br><br>let $y=x-x^{‘}, c=b-Ax^{‘}$<br>$\Leftrightarrow\<br>    \min \; ||  y ||_2 \<br>     s.t.\; Ay=c$<br><br><br>Lagrange:<br><br>$L(y,\lambda) = y^T y + \lambda^T (Ay-c)\$<br><br>dual:<br><br>$g(\lambda) = inf_y \;L(y,\lambda)$<br><br>$let\; \bigtriangledown_y   L(y,\lambda) = 2y + A^T \lambda = 0 \<br>     \Rightarrow y = -\frac{1}{2} A^T \lambda \<br>     \Rightarrow \<br>     g(\lambda) = L(-\frac{1}{2} A^T \lambda,\lambda) = -\frac{1}{4} \lambda^TAA^T\lambda - c^T \lambda \<br>     let\; \bigtriangledown g_{\lambda} = 0 \Rightarrow \lambda = -2(AA^T)^{-1}c \<br>     \Rightarrow y= A^T(AA^T)^{-1}c$<br>     <br><br>$\Leftrightarrow$<br><br>$x-x^{‘} = A^T(AA^T)^{-1}(b-Ax^{‘}) \ \Rightarrow x = x^{‘} - A^T(AA^T)^{-1}(Ax^{‘}-b)$<br><br><br>so,<br>$x_{t+1} = \pi[x^{‘}<em>{t+1}]  \<br>              = x^{‘}</em>{t+1} - A^T(AA^T)^{-1}(Ax^{‘}<em>{t+1}-b) \<br>              = x^{‘}</em>{t+1} - A^T(AA^T)^{-1}Ax^{‘}_{t+1}+A^T(AA^T)^{-1}b \<br>              = x_t -\eta_t \bigtriangledown f(x_t) - A^T(AA^T)^{-1}A(x_t -\eta_t \bigtriangledown f(x_t))+A^T(AA^T)^{-1}b\<br>              = x_t -\eta_t \bigtriangledown f(x_t) - A^T(AA^T)^{-1}Ax_t +A^T(AA^T)^{-1}A\eta_t \bigtriangledown f(x_t)+A^T(AA^T)^{-1}b \<br>              = x_t - \eta_t (I-A^T(AA^T)^{-1}A) \bigtriangledown f(x_t) \$</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Opt</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/16/Projected-Gradient-Descent-Algorithm/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-线搜索技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -590,11 +665,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Opt</a>
+                <a href="javascript:void(0)" class="js-tag color2">RecSys</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RecSys</a>
+                <a href="javascript:void(0)" class="js-tag color4">Opt</a>
               </li>
             
             <div class="clearfix"></div>

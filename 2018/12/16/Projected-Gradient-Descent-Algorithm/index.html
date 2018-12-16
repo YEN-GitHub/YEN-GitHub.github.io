@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/10 | YEN</title>
+  <title>Projected Gradient Descent Algorithm | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YEN">
-<meta property="og:url" content="http://yoursite.com/archives/2018/10/index.html">
+  <meta name="description" content="Abstract:Projected Gradient Descent object:$\min_{x \in C} \; f(x)    \quad \quad C \in R^d : bounded \; set \Leftarrow Ax=b$ Projected Gradient Descent: $x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f">
+<meta name="keywords" content="Opt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Projected Gradient Descent Algorithm">
+<meta property="og:url" content="http://yoursite.com/2018/12/16/Projected-Gradient-Descent-Algorithm/index.html">
 <meta property="og:site_name" content="YEN">
+<meta property="og:description" content="Abstract:Projected Gradient Descent object:$\min_{x \in C} \; f(x)    \quad \quad C \in R^d : bounded \; set \Leftarrow Ax=b$ Projected Gradient Descent: $x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-16T07:40:48.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YEN">
+<meta name="twitter:title" content="Projected Gradient Descent Algorithm">
+<meta name="twitter:description" content="Abstract:Projected Gradient Descent object:$\min_{x \in C} \; f(x)    \quad \quad C \in R^d : bounded \; set \Leftarrow Ax=b$ Projected Gradient Descent: $x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -166,36 +171,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Projected-Gradient-Descent-Algorithm" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/最优化理论基础/" class="archive-article-date">
-  	<time datetime="2018-10-30T15:35:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/最优化理论基础/">最优化理论基础</a>
+    <h1 class="article-title" itemprop="name">
+      Projected Gradient Descent Algorithm
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/16/Projected-Gradient-Descent-Algorithm/" class="archive-article-date">
+  	<time datetime="2018-12-16T07:31:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></h2><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h1><p>Projected Gradient Descent <br><br>object:<br><br>$\min_{x \in C} \; f(x)<br>    \quad \quad C \in R^d : bounded \; set \Leftarrow Ax=b$</p>
+<p>Projected Gradient Descent: <br><br>$x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f(x_t) \<br>     l_2 \; norm: x_{t+1} \in argmin_{x\in C} \; ||x - x^{‘}_{t+1}||_2$<br><br><br>C: convex set $\Rightarrow$ uniqueness: x $\Rightarrow$  PGD: convergence to global optimal value<br><br><br>problem:<br>$\min \; ||  x-x^{‘} ||_2 \s.t.\; Ax=b$<br><br><br>let $y=x-x^{‘}, c=b-Ax^{‘}$<br>$\Leftrightarrow\<br>    \min \; ||  y ||_2 \<br>     s.t.\; Ay=c$<br><br><br>Lagrange:<br><br>$L(y,\lambda) = y^T y + \lambda^T (Ay-c)\$<br><br>dual:<br><br>$g(\lambda) = inf_y \;L(y,\lambda)$<br><br>$let\; \bigtriangledown_y   L(y,\lambda) = 2y + A^T \lambda = 0 \<br>     \Rightarrow y = -\frac{1}{2} A^T \lambda \<br>     \Rightarrow \<br>     g(\lambda) = L(-\frac{1}{2} A^T \lambda,\lambda) = -\frac{1}{4} \lambda^TAA^T\lambda - c^T \lambda \<br>     let\; \bigtriangledown g_{\lambda} = 0 \Rightarrow \lambda = -2(AA^T)^{-1}c \<br>     \Rightarrow y= A^T(AA^T)^{-1}c$<br>     <br><br>$\Leftrightarrow$<br><br>$x-x^{‘} = A^T(AA^T)^{-1}(b-Ax^{‘}) \ \Rightarrow x = x^{‘} - A^T(AA^T)^{-1}(Ax^{‘}-b)$<br><br><br>so,<br>$x_{t+1} = \pi[x^{‘}<em>{t+1}]  \<br>              = x^{‘}</em>{t+1} - A^T(AA^T)^{-1}(Ax^{‘}<em>{t+1}-b) \<br>              = x^{‘}</em>{t+1} - A^T(AA^T)^{-1}Ax^{‘}_{t+1}+A^T(AA^T)^{-1}b \<br>              = x_t -\eta_t \bigtriangledown f(x_t) - A^T(AA^T)^{-1}A(x_t -\eta_t \bigtriangledown f(x_t))+A^T(AA^T)^{-1}b\<br>              = x_t -\eta_t \bigtriangledown f(x_t) - A^T(AA^T)^{-1}Ax_t +A^T(AA^T)^{-1}A\eta_t \bigtriangledown f(x_t)+A^T(AA^T)^{-1}b \<br>              = x_t - \eta_t (I-A^T(AA^T)^{-1}A) \bigtriangledown f(x_t) \$</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -207,57 +238,135 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/16/Projected-Gradient-Descent-Algorithm/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/01/Learning-Binary-Codes-for-Collaborative-Filtering-KDD12/" class="archive-article-date">
-  	<time datetime="2018-10-01T13:29:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/03/线搜索技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最优化：线搜索技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/01/Learning-Binary-Codes-for-Collaborative-Filtering-KDD12/">notes of &lt;&lt; Learning Binary Codes for Collaborative Filtering-KDD12 &gt;&gt;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RecSys</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number"></span> <span class="toc-text">Abstract:</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: ‘Projected Gradient Descent Algorithm’,
+  owner: 'YEN-GitHub',
+  repo: 'YEN-GitHub.github.io',
+  oauth: {
+    client_id: '5935364c8ad39857b584',
+    client_secret: 'a9c07c5c99c3a00dac5a35930961939f9f910a00',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -280,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

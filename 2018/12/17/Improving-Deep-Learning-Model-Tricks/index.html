@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>最优化理论基础 | YEN</title>
+  <title>Improving Deep Learning Model Tricks | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
-<meta name="keywords" content="Opt">
+  <meta name="description" content="Abstract:tricks of deep learning">
+<meta name="keywords" content="DL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最优化理论基础">
-<meta property="og:url" content="http://yoursite.com/2018/10/30/最优化理论基础/index.html">
+<meta property="og:title" content="Improving Deep Learning Model Tricks">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/Improving-Deep-Learning-Model-Tricks/index.html">
 <meta property="og:site_name" content="YEN">
-<meta property="og:description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
+<meta property="og:description" content="Abstract:tricks of deep learning">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-03T13:05:40.997Z">
+<meta property="og:updated_time" content="2018-12-17T13:37:38.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最优化理论基础">
-<meta name="twitter:description" content="摘要：最优化理论基础，求一个函数在一个可行域内的最优解。">
+<meta name="twitter:title" content="Improving Deep Learning Model Tricks">
+<meta name="twitter:description" content="Abstract:tricks of deep learning">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -177,37 +177,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-最优化理论基础" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Improving-Deep-Learning-Model-Tricks" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      最优化理论基础
+      Improving Deep Learning Model Tricks
     </h1>
   
 
         
-        <a href="/2018/10/30/最优化理论基础/" class="archive-article-date">
-  	<time datetime="2018-10-30T15:35:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
+        <a href="/2018/12/17/Improving-Deep-Learning-Model-Tricks/" class="archive-article-date">
+  	<time datetime="2018-12-17T12:49:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
-<h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>最优化理论基础，求一个函数在一个可行域内的最优解。<br><a id="more"></a></p>
-<h1 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h1><p>约束问题：无约束问题/有约束问题 <br><br>算子范数定义；<br><br>矩阵的二范数也叫谱范数。<br><br>向量序列和矩阵序列的收敛性。<br><br>向量范数的定价定理；矩阵范数的等价定理。<br><br></p>
-<p>n元实函数$f(x),x=(x_1,x_2,\ldots,x_n)^T$：梯度在每个分量都连续，称f在x处一阶连续可导。Hessian在每个分量都连续，称f在x处二阶连续可导（此时Hessian为对称阵）。<br><br>向量值函数:$F=(F_1,F_2,\ldots,F_n)^T$: 若每个分量$F_i$都（连续）可微，则F连续）可微。F在x的导数是指他在x的Jacobi矩阵$F’(x)/J_F(x)$。有时也把雅可比的转置称为F在x的梯度。<br><br>对于向量值函数，可以定义Lipschitz连续的概念。<br><br></p>
-<p>凸集的一些例子：n维空间中l个点的凸组合是一个凸集；n维欧式空间中的超平面；射线；<br><br>凸包的定义：所有包含集合D的凸集的交集叫做D的凸包。<br><br>锥；凸锥；尖锥；尖凸锥的定义。<br><br>集合$R_+^n$ 是一个尖锥，通常称为非负锥。凸锥$R_{++}^n$称为正锥。 <br><br></p>
-<p>凸函数；严格凸函数；一致凸（强凸）函数<br><br>一般而言，目标函数的稳定点不一定是极小值点。但对于凸函数来说，稳定点，局部极小值点，全局极小值点是等价的。<br><br></p>
-<p>算法局部收敛速度：<br><br>$lim_{k \rightarrow \infty}  \frac{||x_{k+1}-x^{\ast}||}{||x_{k}-x^{\ast}||} = \theta$ <br><br>(1) $p=1\quad and \quad 0&lt; \theta &lt; 1$: 线性收敛速度 <br><br>(2) $p=1\quad and \quad \theta = 0$: 超线性收敛速度 <br><br>(3) $p=2\quad and \quad 0&lt; \theta &lt; \infty$: 平方收敛速度 <br><br>(4) $p&gt;2\quad and \quad 0&lt; \theta &lt; \infty$: p阶收敛速度 <br><br></p>
-<p>算法终止条件：<br><br>(1) 位移的绝对误差或相对误差充分小。$||x_{k+1}-x_k|| &lt; \epsilon$ or $\frac{||x_{k+1}-x_k||}{||x_k||} &lt; \epsilon$<br><br>(2) 目标函数的绝对误差或相对误差充分小。$|f(x_{k+1})-f(x_k)| &lt; \epsilon$ or<br>$\frac{|f(x_{k+1})-f(x_k)|}{|f(x_k)|} &lt; \epsilon$ <br><br>(3) 目标函数的梯度范数足够小: $||\bigtriangledown f(x_k)||&lt; \epsilon$<br><br><br><br><br></p>
-<blockquote>
-<p>ref: 最优化方法及其Matlab程序设计 马昌凤（本文仅为个人笔记，无其他用途）</p>
-</blockquote>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h1><p>tricks of deep learning<br><a id="more"></a></p>
+<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><ul>
+<li>Modifying learning rate</li>
+<li></li>
+</ul>
 
       
 
@@ -247,7 +244,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Opt</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DL</a>
         		</li>
       		
 		</ul>
@@ -303,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/30/最优化理论基础/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/17/Improving-Deep-Learning-Model-Tricks/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -317,18 +314,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/03/线搜索技术/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          最优化：线搜索技术
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/01/Learning-Binary-Codes-for-Collaborative-Filtering-KDD12/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">notes of &lt;&lt; Learning Binary Codes for Collaborative Filtering-KDD12 &gt;&gt;</div>
+    <a href="/2018/12/17/Improve-the-Recommended-Effect/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Improve the Recommended Effect</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -355,7 +343,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要："><span class="toc-number">1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#知识点："><span class="toc-number">2.</span> <span class="toc-text">知识点：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Content"><span class="toc-number">2.</span> <span class="toc-text">Content</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -380,7 +368,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: ‘最优化理论基础’,
+  id: ‘Improving Deep Learning Model Tricks’,
   owner: 'YEN-GitHub',
   repo: 'YEN-GitHub.github.io',
   oauth: {

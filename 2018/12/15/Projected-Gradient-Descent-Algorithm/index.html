@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Improve the Recommended Effect | YEN</title>
+  <title>Projected Gradient Descent Algorithm | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Abstract: How to improve the recommendation effect ? CF ? Limitations of CF ? cold start problem ?">
-<meta name="keywords" content="RecSys">
+  <meta name="description" content="Abstract:Projected Gradient Descent">
+<meta name="keywords" content="Opt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Improve the Recommended Effect">
-<meta property="og:url" content="http://yoursite.com/2018/12/15/Improve-the-Recommended-Effect/index.html">
+<meta property="og:title" content="Projected Gradient Descent Algorithm">
+<meta property="og:url" content="http://yoursite.com/2018/12/15/Projected-Gradient-Descent-Algorithm/index.html">
 <meta property="og:site_name" content="YEN">
-<meta property="og:description" content="Abstract: How to improve the recommendation effect ? CF ? Limitations of CF ? cold start problem ?">
+<meta property="og:description" content="Abstract:Projected Gradient Descent">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-18T03:41:03.742Z">
+<meta property="og:updated_time" content="2018-12-19T10:29:24.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Improve the Recommended Effect">
-<meta name="twitter:description" content="Abstract: How to improve the recommendation effect ? CF ? Limitations of CF ? cold start problem ?">
+<meta name="twitter:title" content="Projected Gradient Descent Algorithm">
+<meta name="twitter:description" content="Abstract:Projected Gradient Descent">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -171,66 +171,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Improve-the-Recommended-Effect" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Projected-Gradient-Descent-Algorithm" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Improve the Recommended Effect
+      Projected Gradient Descent Algorithm
     </h1>
   
 
         
-        <a href="/2018/12/15/Improve-the-Recommended-Effect/" class="archive-article-date">
-  	<time datetime="2018-12-15T09:25:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-15</time>
+        <a href="/2018/12/15/Projected-Gradient-Descent-Algorithm/" class="archive-article-date">
+  	<time datetime="2018-12-15T07:31:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h1><ul>
-<li>How to improve the recommendation effect ?</li>
-<li>CF ?</li>
-<li>Limitations of CF ?</li>
-<li>cold start problem ?<a id="more"></a>
-</li>
-</ul>
-<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><h2 id="How-to-improve-the-recommendation-effect"><a href="#How-to-improve-the-recommendation-effect" class="headerlink" title="How to improve the recommendation effect ?"></a>How to improve the recommendation effect ?</h2><p>baseline: <br></p>
-<ul>
-<li>Plain<br><br></li>
-</ul>
-<p>improve: <br></p>
-<ul>
-<li>with biases</li>
-<li>additional data sources( implicit ratings)</li>
-<li>varying confidence level</li>
-<li>temporal dynamics<br><br></li>
-</ul>
-<h2 id="CF"><a href="#CF" class="headerlink" title="CF ?"></a>CF ?</h2><ul>
-<li>required only ratings, widely applicable</li>
-<li>neighborhood methods, latent factors</li>
-<li>use of machine learning techniques<br><br></li>
-</ul>
-<h2 id="Limitations-of-CF"><a href="#Limitations-of-CF" class="headerlink" title="Limitations of CF ?"></a>Limitations of CF ?</h2><ul>
-<li>cold start problem</li>
-<li>popularity bias - difficult to recommended item from the tail</li>
-<li>impact of noise (e.g. one account userd by different people)</li>
-<li>possibility of attacks<br><br></li>
-</ul>
-<h2 id="cold-start-problem"><a href="#cold-start-problem" class="headerlink" title="cold start problem ?"></a>cold start problem ?</h2><ul>
-<li>use other method (non-personalized, Content-based …) in the initial phase</li>
-<li>ask/force user to rate items</li>
-<li>use defaults(means)</li>
-<li>better algorithms - e.g. recursive CF</li>
-</ul>
-<p><br></p>
+        <h2 id=""><a href="#" class="headerlink" title=""></a><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></h2><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract:"></a>Abstract:</h1><p>Projected Gradient Descent <br></p>
+<a id="more"></a>
+<p>object:<br><br>$\min_{x \in C} \; f(x)<br>    \quad \quad C \in R^d : bounded \; set \Leftarrow Ax=b$</p>
+<p>Projected Gradient Descent: <br><br>$x^{‘}_{t+1} = x_t - \eta_t \bigtriangledown f(x_t) \<br>     l_2 \; norm: x_{t+1} \in argmin_{x\in C} \; ||x - x^{‘}_{t+1}||_2$<br><br></p>
+<p>C: convex set $\Rightarrow$ uniqueness: x $\Rightarrow$  PGD: convergence to global optimal value<br><br><br>problem:<br>$\min \; ||  x-x^{‘} ||_2 \ s.t.\; Ax=b$<br><br></p>
+<p>let $y=x-x^{‘}, c=b-Ax^{‘}$<br>$\Leftrightarrow\<br>    \min \; ||  y ||_2 \<br>     s.t.\; Ay=c$<br><br></p>
+<p>Lagrange:<br><br>$L(y,\lambda) = y^T y + \lambda^T (Ay-c)$<br><br></p>
+<p>dual:<br><br><br>$g(\lambda) = inf_y \;L(y,\lambda)$<br><br></p>
+<p>$let\; \bigtriangledown_y   L(y,\lambda) = 2y + A^T \lambda = 0 \<br>     \Rightarrow y = -\frac{1}{2} A^T \lambda \<br>     \Rightarrow \<br>     g(\lambda) = L(-\frac{1}{2} A^T \lambda,\lambda) = -\frac{1}{4} \lambda^TAA^T\lambda - c^T \lambda \<br>     let\; \bigtriangledown g_{\lambda} = 0 \Rightarrow \lambda = -2(AA^T)^{-1}c \<br>     \Rightarrow y= A^T(AA^T)^{-1}c$<br><br></p>
+<p>$\Leftrightarrow$<br><br></p>
+<p>$x-x^{‘} = A^T(AA^T)^{-1}(b-Ax^{‘}) \ \Rightarrow x = x^{‘} - A^T(AA^T)^{-1}(Ax^{‘}-b)$<br><br></p>
+<p>so,<br><br>$x_{t+1} = \pi[x^{‘}<em>{t+1}]$<br><br>$= x^{‘}</em>{t+1} - A^T(AA^T)^{-1}(Ax^{‘}<em>{t+1}-b)$<br><br>$= x^{‘}</em>{t+1} - A^T(AA^T)^{-1}Ax^{‘}_{t+1}+A^T(AA^T)^{-1}b$<br><br>$= x_t -\eta_t \bigtriangledown f(x_t) - A^T(AA^T)^{-1}A(x_t -\eta_t \bigtriangledown f(x_t))+A^T(AA^T)^{-1}b$<br><br>$= x_t -\eta_t \bigtriangledown f(x_t) - A^T(AA^T)^{-1}Ax_t +A^T(AA^T)^{-1}A\eta_t \bigtriangledown f(x_t)+A^T(AA^T)^{-1}b$<br><br>$= x_t - \eta_t (I-A^T(AA^T)^{-1}A) \bigtriangledown f(x_t)$<br><br></p>
 <blockquote>
-<p>ref: Radek Pelanek sildes: Collaborative Filtering</p>
+<p>ref: MLTalker Projected Gradient Descent<br><br>ref: S. Boyd and L. Vandenberghe. Convex Optimization. Cambridge University Press, 2004</p>
 </blockquote>
 
       
@@ -271,7 +245,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">RecSys</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Opt</a>
         		</li>
       		
 		</ul>
@@ -327,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/15/Improve-the-Recommended-Effect/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/15/Projected-Gradient-Descent-Algorithm/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,11 +315,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/16/Projected-Gradient-Descent-Algorithm/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/16/Improve-the-Recommended-Effect/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Projected Gradient Descent Algorithm
+          Improve the Recommended Effect
         
       </div>
     </a>
@@ -379,7 +353,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Content"><span class="toc-number">2.</span> <span class="toc-text">Content</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-improve-the-recommendation-effect"><span class="toc-number">2.1.</span> <span class="toc-text">How to improve the recommendation effect ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF"><span class="toc-number">2.2.</span> <span class="toc-text">CF ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limitations-of-CF"><span class="toc-number">2.3.</span> <span class="toc-text">Limitations of CF ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cold-start-problem"><span class="toc-number">2.4.</span> <span class="toc-text">cold start problem ?</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number"></span> <span class="toc-text">Abstract:</span></a>
                     </div>
                 </span>
             </div>
@@ -404,7 +378,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: ‘Improve the Recommended Effect’,
+  id: ‘Projected Gradient Descent Algorithm’,
   owner: 'YEN-GitHub',
   repo: 'YEN-GitHub.github.io',
   oauth: {

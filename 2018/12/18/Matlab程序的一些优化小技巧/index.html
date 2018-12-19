@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Matlab程序的一些优化小技巧 | YEN</title>
+  <title>Matlab程序的一些编程基础和优化小技巧 | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：使用matlab做离散优化的一些编程技巧。">
+  <meta name="description" content="摘要：使用Matlab程序的一些编程基础和优化小技巧。">
 <meta name="keywords" content="Opt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Matlab程序的一些优化小技巧">
+<meta property="og:title" content="Matlab程序的一些编程基础和优化小技巧">
 <meta property="og:url" content="http://yoursite.com/2018/12/18/Matlab程序的一些优化小技巧/index.html">
 <meta property="og:site_name" content="YEN">
-<meta property="og:description" content="摘要：使用matlab做离散优化的一些编程技巧。">
+<meta property="og:description" content="摘要：使用Matlab程序的一些编程基础和优化小技巧。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-18T03:33:56.594Z">
+<meta property="og:updated_time" content="2018-12-19T12:27:53.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Matlab程序的一些优化小技巧">
-<meta name="twitter:description" content="摘要：使用matlab做离散优化的一些编程技巧。">
+<meta name="twitter:title" content="Matlab程序的一些编程基础和优化小技巧">
+<meta name="twitter:description" content="摘要：使用Matlab程序的一些编程基础和优化小技巧。">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Matlab程序的一些优化小技巧
+      Matlab程序的一些编程基础和优化小技巧
     </h1>
   
 
@@ -193,8 +193,19 @@
       
         <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>使用matlab做离散优化的一些编程技巧。<br><br><a id="more"></a></p>
-<hr>
+<h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>使用Matlab程序的一些编程基础和优化小技巧。<br><br><a id="more"></a></p>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h4 id="matlab使用结构体："><a href="#matlab使用结构体：" class="headerlink" title="matlab使用结构体："></a>matlab使用结构体：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">option.a=5;</span><br><span class="line">option.b=3;</span><br><span class="line">option</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">option =</span><br><span class="line">  struct with fields:</span><br><span class="line">    a: 5</span><br><span class="line">    b: 3</span><br></pre></td></tr></table></figure>
+<p>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if isfield(option,&apos;a&apos;)</span><br><span class="line">    maxItr = option.a;</span><br><span class="line">else</span><br><span class="line">    maxItr = 50;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<h4 id="matlab计时："><a href="#matlab计时：" class="headerlink" title="matlab计时："></a>matlab计时：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t1 = clock;</span><br><span class="line">beginTime = datestr(now,21);</span><br><span class="line">...code...;</span><br><span class="line">runtime = etime(clock,t1);</span><br><span class="line">endTime = datestr(now,21);</span><br><span class="line"></span><br><span class="line">disp([&apos;runTime:&apos;,num2str(runtime),&apos;s&apos;]);</span><br><span class="line">disp([&apos;beginTime:&apos;,beginTime]);</span><br><span class="line">disp([&apos;endTime:&apos;,endTime]);</span><br></pre></td></tr></table></figure>
+<h4 id="matlab生成稀疏矩阵-matlab中可用来加速矩阵运算-："><a href="#matlab生成稀疏矩阵-matlab中可用来加速矩阵运算-：" class="headerlink" title="matlab生成稀疏矩阵(matlab中可用来加速矩阵运算)："></a>matlab生成稀疏矩阵(matlab中可用来加速矩阵运算)：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num2=4</span><br><span class="line">userId2=[1 3 5 6]</span><br><span class="line">userX2 = sparse(1:num2,userId2,ones(1,num2));</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">userX2 =</span><br><span class="line"></span><br><span class="line">   (1,1)        1</span><br><span class="line">   (2,3)        1</span><br><span class="line">   (3,5)        1</span><br><span class="line">   (4,6)        1</span><br></pre></td></tr></table></figure></p>
+<h4 id="matlab加载内存中的稀疏矩阵："><a href="#matlab加载内存中的稀疏矩阵：" class="headerlink" title="matlab加载内存中的稀疏矩阵："></a>matlab加载内存中的稀疏矩阵：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getfield(load(&apos;dataset\filmtrust\filmtrust_train_ratings.mat&apos;,&apos;UserItemTrain&apos;),&apos;UserItemTrain&apos;);</span><br></pre></td></tr></table></figure>
+<h4 id="matlab获取矩阵非0元位置："><a href="#matlab获取矩阵非0元位置：" class="headerlink" title="matlab获取矩阵非0元位置："></a>matlab获取矩阵非0元位置：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">S=[1 0 3</span><br><span class="line">    0 6 0</span><br><span class="line">    4 2 0]</span><br><span class="line">IDX = (S~=0);</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">IDX =</span><br><span class="line"></span><br><span class="line">  3×3 logical array</span><br><span class="line"></span><br><span class="line">   1   0   1</span><br><span class="line">   0   1   0</span><br><span class="line">   1   1   0</span><br></pre></td></tr></table></figure></p>
+<h4 id="matlab-替换矩阵中值为x的元素为y："><a href="#matlab-替换矩阵中值为x的元素为y：" class="headerlink" title="matlab 替换矩阵中值为x的元素为y："></a>matlab 替换矩阵中值为x的元素为y：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">S =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br><span class="line">     1     3     5</span><br><span class="line"></span><br><span class="line">S(S==1) = 6</span><br><span class="line"></span><br><span class="line">S =</span><br><span class="line"></span><br><span class="line">     6     2     3</span><br><span class="line">     4     5     6</span><br><span class="line">     6     3     5</span><br></pre></td></tr></table></figure>
+<h4 id="matlab-取一个矩阵第i列的非0元素："><a href="#matlab-取一个矩阵第i列的非0元素：" class="headerlink" title="matlab 取一个矩阵第i列的非0元素："></a>matlab 取一个矩阵第i列的非0元素：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonzeros(ST(:,i))</span><br></pre></td></tr></table></figure>
 
       
 
@@ -333,7 +344,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要："><span class="toc-number">1.</span> <span class="toc-text">摘要：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要："><span class="toc-number">1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内容"><span class="toc-number">2.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab使用结构体："><span class="toc-number">2.0.0.1.</span> <span class="toc-text">matlab使用结构体：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab计时："><span class="toc-number">2.0.0.2.</span> <span class="toc-text">matlab计时：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab生成稀疏矩阵-matlab中可用来加速矩阵运算-："><span class="toc-number">2.0.0.3.</span> <span class="toc-text">matlab生成稀疏矩阵(matlab中可用来加速矩阵运算)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab加载内存中的稀疏矩阵："><span class="toc-number">2.0.0.4.</span> <span class="toc-text">matlab加载内存中的稀疏矩阵：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab获取矩阵非0元位置："><span class="toc-number">2.0.0.5.</span> <span class="toc-text">matlab获取矩阵非0元位置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab-替换矩阵中值为x的元素为y："><span class="toc-number">2.0.0.6.</span> <span class="toc-text">matlab 替换矩阵中值为x的元素为y：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab-取一个矩阵第i列的非0元素："><span class="toc-number">2.0.0.7.</span> <span class="toc-text">matlab 取一个矩阵第i列的非0元素：</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -358,7 +369,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: ‘Matlab程序的一些优化小技巧’,
+  id: ‘Matlab程序的一些编程基础和优化小技巧’,
   owner: 'YEN-GitHub',
   repo: 'YEN-GitHub.github.io',
   oauth: {

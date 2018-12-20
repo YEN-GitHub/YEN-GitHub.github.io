@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Matlab程序的一些编程基础和优化小技巧 | YEN</title>
+  <title>伯克利大学 CS 294-112 《深度强化学习课程》学习笔记 | YEN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：使用Matlab程序的一些编程基础和优化小技巧。">
-<meta name="keywords" content="Opt">
+  <meta name="description" content="摘要:伯克利大学 CS 294-112 《深度强化学习课程》学习笔记 内容第一课 深度学习；强化学习；深度强化学习概念 Deep: can process complex sensory input and can also compute really complex functions Reinforcement learning: can choose complex actions">
+<meta name="keywords" content="DRL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Matlab程序的一些编程基础和优化小技巧">
-<meta property="og:url" content="http://yoursite.com/2018/12/18/Matlab程序的一些优化小技巧/index.html">
+<meta property="og:title" content="伯克利大学 CS 294-112 《深度强化学习课程》学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/12/20/伯克利大学-CS-294-112-《深度强化学习课程》学习笔记/index.html">
 <meta property="og:site_name" content="YEN">
-<meta property="og:description" content="摘要：使用Matlab程序的一些编程基础和优化小技巧。">
+<meta property="og:description" content="摘要:伯克利大学 CS 294-112 《深度强化学习课程》学习笔记 内容第一课 深度学习；强化学习；深度强化学习概念 Deep: can process complex sensory input and can also compute really complex functions Reinforcement learning: can choose complex actions">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-20T11:55:54.134Z">
+<meta property="og:image" content="http://yoursite.com/img/BlogImg/2018-12-20/1.png">
+<meta property="og:updated_time" content="2018-12-20T16:36:45.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Matlab程序的一些编程基础和优化小技巧">
-<meta name="twitter:description" content="摘要：使用Matlab程序的一些编程基础和优化小技巧。">
+<meta name="twitter:title" content="伯克利大学 CS 294-112 《深度强化学习课程》学习笔记">
+<meta name="twitter:description" content="摘要:伯克利大学 CS 294-112 《深度强化学习课程》学习笔记 内容第一课 深度学习；强化学习；深度强化学习概念 Deep: can process complex sensory input and can also compute really complex functions Reinforcement learning: can choose complex actions">
+<meta name="twitter:image" content="http://yoursite.com/img/BlogImg/2018-12-20/1.png">
   
     <link rel="alternative" href="/atom.xml" title="YEN" type="application/atom+xml">
   
@@ -171,20 +173,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Matlab程序的一些优化小技巧" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-伯克利大学-CS-294-112-《深度强化学习课程》学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Matlab程序的一些编程基础和优化小技巧
+      伯克利大学 CS 294-112 《深度强化学习课程》学习笔记
     </h1>
   
 
         
-        <a href="/2018/12/18/Matlab程序的一些优化小技巧/" class="archive-article-date">
-  	<time datetime="2018-12-18T03:32:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-18</time>
+        <a href="/2018/12/20/伯克利大学-CS-294-112-《深度强化学习课程》学习笔记/" class="archive-article-date">
+  	<time datetime="2018-12-20T14:19:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
 </a>
         
       </header>
@@ -193,25 +195,13 @@
       
         <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>使用Matlab程序的一些编程基础和优化小技巧。<br><br><a id="more"></a></p>
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h4 id="matlab使用结构体："><a href="#matlab使用结构体：" class="headerlink" title="matlab使用结构体："></a>matlab使用结构体：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">option.a=5;</span><br><span class="line">option.b=3;</span><br><span class="line">option</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">option =</span><br><span class="line">  struct with fields:</span><br><span class="line">    a: 5</span><br><span class="line">    b: 3</span><br></pre></td></tr></table></figure>
-<p>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if isfield(option,&apos;a&apos;)</span><br><span class="line">    maxItr = option.a;</span><br><span class="line">else</span><br><span class="line">    maxItr = 50;</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
-<h4 id="matlab计时："><a href="#matlab计时：" class="headerlink" title="matlab计时："></a>matlab计时：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t1 = clock;</span><br><span class="line">beginTime = datestr(now,21);</span><br><span class="line">...code...;</span><br><span class="line">runtime = etime(clock,t1);</span><br><span class="line">endTime = datestr(now,21);</span><br><span class="line"></span><br><span class="line">disp([&apos;runTime:&apos;,num2str(runtime),&apos;s&apos;]);</span><br><span class="line">disp([&apos;beginTime:&apos;,beginTime]);</span><br><span class="line">disp([&apos;endTime:&apos;,endTime]);</span><br></pre></td></tr></table></figure>
-<h4 id="matlab生成稀疏矩阵-matlab中可用来加速矩阵运算-："><a href="#matlab生成稀疏矩阵-matlab中可用来加速矩阵运算-：" class="headerlink" title="matlab生成稀疏矩阵(matlab中可用来加速矩阵运算)："></a>matlab生成稀疏矩阵(matlab中可用来加速矩阵运算)：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num2=4</span><br><span class="line">userId2=[1 3 5 6]</span><br><span class="line">userX2 = sparse(1:num2,userId2,ones(1,num2));</span><br></pre></td></tr></table></figure>
-<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">userX2 =</span><br><span class="line"></span><br><span class="line">   (1,1)        1</span><br><span class="line">   (2,3)        1</span><br><span class="line">   (3,5)        1</span><br><span class="line">   (4,6)        1</span><br></pre></td></tr></table></figure></p>
-<h4 id="matlab加载内存中的稀疏矩阵："><a href="#matlab加载内存中的稀疏矩阵：" class="headerlink" title="matlab加载内存中的稀疏矩阵："></a>matlab加载内存中的稀疏矩阵：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getfield(load(&apos;dataset\filmtrust\filmtrust_train_ratings.mat&apos;,&apos;UserItemTrain&apos;),&apos;UserItemTrain&apos;);</span><br></pre></td></tr></table></figure>
-<h4 id="matlab获取矩阵非0元位置："><a href="#matlab获取矩阵非0元位置：" class="headerlink" title="matlab获取矩阵非0元位置："></a>matlab获取矩阵非0元位置：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">S=[1 0 3</span><br><span class="line">    0 6 0</span><br><span class="line">    4 2 0]</span><br><span class="line">IDX = (S~=0);</span><br></pre></td></tr></table></figure>
-<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">IDX =</span><br><span class="line"></span><br><span class="line">  3×3 logical array</span><br><span class="line"></span><br><span class="line">   1   0   1</span><br><span class="line">   0   1   0</span><br><span class="line">   1   1   0</span><br></pre></td></tr></table></figure></p>
-<h4 id="matlab替换矩阵中值为x的元素为y："><a href="#matlab替换矩阵中值为x的元素为y：" class="headerlink" title="matlab替换矩阵中值为x的元素为y："></a>matlab替换矩阵中值为x的元素为y：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">S =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br><span class="line">     1     3     5</span><br><span class="line"></span><br><span class="line">S(S==1) = 6</span><br><span class="line"></span><br><span class="line">S =</span><br><span class="line"></span><br><span class="line">     6     2     3</span><br><span class="line">     4     5     6</span><br><span class="line">     6     3     5</span><br></pre></td></tr></table></figure>
-<h4 id="matlab取一个矩阵第i列的非0元素："><a href="#matlab取一个矩阵第i列的非0元素：" class="headerlink" title="matlab取一个矩阵第i列的非0元素："></a>matlab取一个矩阵第i列的非0元素：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nonzeros(ST(:,i))</span><br></pre></td></tr></table></figure>
-<h4 id="matlab可以调用C语言程序："><a href="#matlab可以调用C语言程序：" class="headerlink" title="matlab可以调用C语言程序："></a>matlab可以调用C语言程序：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用mex格式 编写C程序 编译 matlab中调用</span><br></pre></td></tr></table></figure>
-<h4 id="matlab计算两个同型矩阵中有几个元素不等："><a href="#matlab计算两个同型矩阵中有几个元素不等：" class="headerlink" title="matlab计算两个同型矩阵中有几个元素不等："></a>matlab计算两个同型矩阵中有几个元素不等：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(sum(B~=B0))</span><br></pre></td></tr></table></figure>
-<h4 id="matlab使用句柄："><a href="#matlab使用句柄：" class="headerlink" title="matlab使用句柄："></a>matlab使用句柄：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">变量名=@(输入参数列表)运算表达式</span><br><span class="line"></span><br><span class="line">mysqr=@(x)x.*x;  % 计算一个数的平方</span><br></pre></td></tr></table></figure>
-<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqr(2)</span><br><span class="line">ans = 4</span><br></pre></td></tr></table></figure></p>
-<h4 id="matlab直接取一个矩阵的多列："><a href="#matlab直接取一个矩阵的多列：" class="headerlink" title="matlab直接取一个矩阵的多列："></a>matlab直接取一个矩阵的多列：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v=[1 8 30 40]</span><br><span class="line">B(:,v) 就是取出B中的第1 8 30 40这四列</span><br></pre></td></tr></table></figure>
-<h4 id="matlab按行相加："><a href="#matlab按行相加：" class="headerlink" title="matlab按行相加："></a>matlab按行相加：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">矩阵对各列元素求和:sum(A)</span><br><span class="line">矩阵对各行元素求和: sum(A,2)</span><br><span class="line">对所有元素求和: sum(sum(A)) 或 sum(sum(A),2)</span><br></pre></td></tr></table></figure>
+
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要:"></a>摘要:</h1><p>伯克利大学 CS 294-112 《深度强化学习课程》学习笔记</p>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="第一课"><a href="#第一课" class="headerlink" title="第一课"></a>第一课</h2><ul>
+<li>深度学习；强化学习；深度强化学习概念</li>
+<li>Deep: can process complex sensory input and can also compute really complex functions</li>
+<li>Reinforcement learning: can choose complex actions<br><img src="/img/BlogImg/2018-12-20/1.png" alt="image"><br></li>
+</ul>
 
       
 
@@ -251,7 +241,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Opt</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DRL</a>
         		</li>
       		
 		</ul>
@@ -307,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/18/Matlab程序的一些优化小技巧/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/20/伯克利大学-CS-294-112-《深度强化学习课程》学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +311,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/20/伯克利大学-CS-294-112-《深度强化学习课程》学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          伯克利大学 CS 294-112 《深度强化学习课程》学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/17/Improving-Deep-Learning-Model-Tricks/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Improving Deep Learning Model Tricks</div>
+    <a href="/2018/12/18/Matlab程序的一些优化小技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Matlab程序的一些编程基础和优化小技巧</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -359,7 +340,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要："><span class="toc-number">1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内容"><span class="toc-number">2.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab使用结构体："><span class="toc-number">2.0.0.1.</span> <span class="toc-text">matlab使用结构体：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab计时："><span class="toc-number">2.0.0.2.</span> <span class="toc-text">matlab计时：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab生成稀疏矩阵-matlab中可用来加速矩阵运算-："><span class="toc-number">2.0.0.3.</span> <span class="toc-text">matlab生成稀疏矩阵(matlab中可用来加速矩阵运算)：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab加载内存中的稀疏矩阵："><span class="toc-number">2.0.0.4.</span> <span class="toc-text">matlab加载内存中的稀疏矩阵：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab获取矩阵非0元位置："><span class="toc-number">2.0.0.5.</span> <span class="toc-text">matlab获取矩阵非0元位置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab替换矩阵中值为x的元素为y："><span class="toc-number">2.0.0.6.</span> <span class="toc-text">matlab替换矩阵中值为x的元素为y：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab取一个矩阵第i列的非0元素："><span class="toc-number">2.0.0.7.</span> <span class="toc-text">matlab取一个矩阵第i列的非0元素：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab可以调用C语言程序："><span class="toc-number">2.0.0.8.</span> <span class="toc-text">matlab可以调用C语言程序：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab计算两个同型矩阵中有几个元素不等："><span class="toc-number">2.0.0.9.</span> <span class="toc-text">matlab计算两个同型矩阵中有几个元素不等：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab使用句柄："><span class="toc-number">2.0.0.10.</span> <span class="toc-text">matlab使用句柄：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab直接取一个矩阵的多列："><span class="toc-number">2.0.0.11.</span> <span class="toc-text">matlab直接取一个矩阵的多列：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#matlab按行相加："><span class="toc-number">2.0.0.12.</span> <span class="toc-text">matlab按行相加：</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内容"><span class="toc-number">2.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一课"><span class="toc-number">2.1.</span> <span class="toc-text">第一课</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -384,7 +365,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: ‘Matlab程序的一些编程基础和优化小技巧’,
+  id: ‘伯克利大学 CS 294-112 《深度强化学习课程》学习笔记’,
   owner: 'YEN-GitHub',
   repo: 'YEN-GitHub.github.io',
   oauth: {
